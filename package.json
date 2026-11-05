@@ -18,7 +18,7 @@
     "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
-},
+  },
   "devDependencies": {
     "@types/node": "^26.6.6",
     "tsx": "^4.23.15",
