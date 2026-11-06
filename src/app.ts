@@ -1,5 +1,9 @@
 import express from "express";
 import cors from "cors";
+import authRoutes from "./modules/auth/auth.routes";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 
@@ -12,6 +16,8 @@ app.get("/health", (req, res) => {
         message: "TaskFlow API is running"
     });
 });
+
+app.use("/api/auth", authRoutes);
 
 
 export default app;

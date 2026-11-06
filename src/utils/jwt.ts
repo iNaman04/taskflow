@@ -1,4 +1,4 @@
-// @ts-ignore -- jsonwebtoken typings are not installed
+
 import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET;
