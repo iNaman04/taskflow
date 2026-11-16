@@ -16,6 +16,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
+    "dev:worker": "tsx watch src/workers/worker.ts",
     "build": "tsc",
     "start": "node dist/server.js"
   },

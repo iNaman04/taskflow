@@ -12,7 +12,7 @@ export const registerUser = async (data: RegisterInput) => {
 
     const { name, email, password } = data;
 
-    // Check whether user already exists
+    
     const existingUser = await prisma.user.findUnique({
         where: { email }
     });
@@ -21,10 +21,10 @@ export const registerUser = async (data: RegisterInput) => {
         throw new Error("User already exists");
     }
 
-    // Hash password
+    
     const passwordHash = await bcrypt.hash(password, 12);
 
-    // Create user
+    
     const user = await prisma.user.create({
         data: {
             name,
@@ -33,7 +33,7 @@ export const registerUser = async (data: RegisterInput) => {
         }
     });
 
-    // Generate JWT
+    
     const token = generateToken(user.id);
 
     return {
@@ -53,7 +53,7 @@ export const loginUser = async (
     password: string
 ) => {
 
-    // Find user
+    
     const user = await prisma.user.findUnique({
         where: { email }
     });
@@ -72,7 +72,7 @@ export const loginUser = async (
         throw new Error("Invalid email or password");
     }
 
-    // Generate JWT
+
     const token = generateToken(user.id);
 
     return {

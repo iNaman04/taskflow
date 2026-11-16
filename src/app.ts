@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import authRoutes from "./modules/auth/auth.routes";
+import jobsRoutes from "./modules/jobs/jobs.routes";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -18,6 +19,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/jobs", jobsRoutes);
 
 
 export default app;

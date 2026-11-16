@@ -10,4 +10,4 @@ export default defineConfig({
   datasource: {
     url: "postgresql://postgres:mysecretpassword@localhost:5432/taskflow?schema=public",
   },
-});
+});  
